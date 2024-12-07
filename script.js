@@ -1,10 +1,22 @@
 
 document.getElementById('history').addEventListener('click',()=>{
   showSectionByID('historySection');
+  const HButton =document.getElementById('history');
+  HButton.classList.remove('bg-transparent');
+  HButton.classList.add('bg-green-500');
+  const DButton =document.getElementById('donation');
+  DButton.classList.remove('bg-green-500');
+  DButton.classList.add('bg-transparent');
 
 });
 document.getElementById('donation').addEventListener('click',()=>{
   showSectionByID('donationSection');
+  const button =document.getElementById('donation');
+  button.classList.remove('bg-transparent');
+  button.classList.add('bg-green-500')
+  const HButton =document.getElementById('history');
+  HButton.classList.remove('bg-green-500');
+  HButton.classList.add('bg-transparent');
 });
 
 function showSectionByID(id){
