@@ -32,11 +32,11 @@
  <div class="flex border justify-center rounded-xl my-5 mx-10 p-10">
         <img src="./assets/feni.png" alt="">
         <div class="px-5 pt-10 ">
-            <span class="flex items-center border w-[20%] py-2 text-black p-1 font-bold"><img src="./assets/coin.png" alt=""> 0 BDT</span>
+            <span class="flex items-center border w-[20%] py-2 text-black p-1 font-bold"><img src="./assets/coin.png" alt=""><span id="total-balance" >1000</span> BDT</span>
             <h4 class="content py-2 text-3xl text-black font-bold">Donate for Flood at Noakhali, Bangladesh</h4>
             <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <input type="text" placeholder="Write Donation amount " class="donation input input-bordered w-full bg-white my-2" />
-            <button onclick="my_modal_1.showModal(), addTask(this)" class="btn btn-primary w-full">Donate Now</button>
+            <input id="input-add-money" type="text" placeholder="Write Donation amount " class="donation input input-bordered w-full bg-white my-2" />
+           <button class="btn" id="btn-add-money">Donate Now</button>
         </div>
     </div>
 
@@ -65,7 +65,7 @@
 
 
 
-<dialog id="my_modal_1" class="modal">
+<dialog id="" class="modal">
   <div class="modal-box text-center bg-white">
     <h3 class="text-4xl font-bold text-black">Congrats!</h3>
     <img class="items-center justify-center text-center pt-5 pl-[220px]" src="./assets/coin.png" alt="">
