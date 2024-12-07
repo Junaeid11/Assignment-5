@@ -1,26 +1,25 @@
-document
-  .getElementById("donation")
-  .addEventListener("click", () => addOrHideSection("donation"));
-document
-  .getElementById("history")
-  .addEventListener("click", () => addOrHideSection("history"));
 
-// {i used ternary operator}
-addOrHideSection = (section) => {
-  const donationSection = document.getElementById("donationSection");
-  const historySection = document.getElementById("historySection");
+document.getElementById('history').addEventListener('click',()=>{
+  showSectionByID('historySection');
 
-  section === "donation"
-    ? (donationSection.classList.remove("hidden"),
-      historySection.classList.add("hidden"))
-    : (historySection.classList.remove("hidden"),
-      donationSection.classList.add("hidden"));
-};
+});
+document.getElementById('donation').addEventListener('click',()=>{
+  showSectionByID('donationSection');
+});
+
+function showSectionByID(id){
+  document.getElementById('donationSection').classList.add('hidden');
+  document.getElementById('historySection').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+}
+
 document.getElementById("btn-add-money").addEventListener("click", (event) => {
   event.preventDefault();
-  const addMoney = parseFloat(document.getElementById("input-add-money").value);
+  const input = document.getElementById("input-add-money")
+  const addMoney = parseFloat(input.value);
+
   const debitBal = parseFloat(document.getElementById("balance").innerText);
-  if (!isNaN(addMoney)) {
+  if (!isNaN(addMoney) && addMoney > 0) {
     const ultimateDeb = debitBal - addMoney;
     if (ultimateDeb < 0) {
       return alert("You don't have enough balance to donate");
@@ -41,6 +40,7 @@ document.getElementById("btn-add-money").addEventListener("click", (event) => {
       div.innerHTML = `<span class="text-2xl text-black font-bold">${addMoney} taka is Donated for ${title}</span>
                     <p class='text-gray-400'>Date: ${date} at Time: ${time}</p>`;
       document.getElementById("historySection").appendChild(div);
+      input.value = ''
       return;
     }
   } else {
@@ -49,11 +49,12 @@ document.getElementById("btn-add-money").addEventListener("click", (event) => {
 });
 document.getElementById("btn-add-money2").addEventListener("click", (event) => {
   event.preventDefault();
-  const addMoney = parseFloat(
-    document.getElementById("input-add-money2").value
+  const input =
+  document.getElementById("input-add-money2")
+  const addMoney = parseFloat(input.value
   );
   const debitBal = parseFloat(document.getElementById("balance").innerText);
-  if (!isNaN(addMoney)) {
+  if (!isNaN(addMoney) && addMoney > 0) {
     const ultimateDeb = debitBal - addMoney;
     if (ultimateDeb < 0) {
       return alert("You don't have enough balance to donate");
@@ -74,6 +75,7 @@ document.getElementById("btn-add-money2").addEventListener("click", (event) => {
     div.innerHTML = `<span class="text-2xl text-black font-bold">${addMoney} taka is Donated for ${title}</span>
                     <p class='text-gray-400'>Date: ${date} at Time: ${time}</p>`;
     document.getElementById("historySection").appendChild(div);
+     input.value = ''
     return;
   } else {
     return alert("Please enter a valid number");
@@ -81,11 +83,11 @@ document.getElementById("btn-add-money2").addEventListener("click", (event) => {
 });
 document.getElementById("btn-add-money3").addEventListener("click", (event) => {
   event.preventDefault();
-  const addMoney = parseFloat(
-    document.getElementById("input-add-money3").value
+  const input = document.getElementById("input-add-money3");
+  const addMoney = parseFloat(input.value
   );
   const debitBal = parseFloat(document.getElementById("balance").innerText);
-  if (!isNaN(addMoney)) {
+  if (!isNaN(addMoney) && addMoney > 0) {
     const ultimateDeb = debitBal - addMoney;
     if (ultimateDeb < 0) {
       return alert("You don't have enough balance to donate");
@@ -107,6 +109,7 @@ document.getElementById("btn-add-money3").addEventListener("click", (event) => {
     div.innerHTML = `<span class="text-2xl text-black font-bold">${addMoney} taka is Donated for ${title}</span>
                     <p class='text-gray-400'>Date: ${date} at Time: ${time}</p>`;
     document.getElementById("historySection").appendChild(div);
+    input.value = ''
     return;
   } else {
     return alert("Please enter a valid number");
