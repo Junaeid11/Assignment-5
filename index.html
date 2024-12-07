@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="mx-auto bg-white">
+    <header class=" bg-transparent backdrop-blur-lg sticky top-0 w-full mt-[-25px]" >
+        <nav class=" bg-yellow-100/40 px-4 py-4 flex items-center justify-between">
+           <a href="./blog.html">
+            <button  class="btn btn-primary ">Blog</button>
+           </a>
+            <span class="flex items-center"><img src="./assets/logo.png" alt="">
+                <h1 class="text-black font-bold text-2xl"> Donate Bangladesh</h1>
+            </span>
+            <span class=" flex items-center">
+                <img src="./assets/coin.png" alt="">
+                <h1 class="font-bold text-black"><span id="balance">1000</span>BDT</h1>
+            </span>
+        </nav>
+        <div  class="justify-center bg-slate-50/55 py-5 text-center">
+            <button id="donation" class=" btn bg-purple-400 text-black hover:text-white mx-1 ">Donation</button>
+            <button id="history" class=" btn bg-transparent text-black hover:text-white">History</button>
+        </div>   
+    </header>
+    <main class="">
+        
+<section id="donationSection">
+ <div class="flex border justify-center rounded-xl my-5 mx-10 p-10">
+        <img src="./assets/feni.png" alt="">
+        <div class="px-5 pt-10 ">
+            <span class="flex items-center border w-[20%] py-2 text-black p-1 font-bold"><img src="./assets/coin.png" alt=""> 0 BDT</span>
+            <h4 class="content py-2 text-3xl text-black font-bold">Donate for Flood at Noakhali, Bangladesh</h4>
+            <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <input type="text" placeholder="Write Donation amount " class="donation input input-bordered w-full bg-white my-2" />
+            <button onclick="my_modal_1.showModal(), addTask(this)" class="btn btn-primary w-full">Donate Now</button>
+        </div>
+    </div>
+
+    <div class="flex border justify-center rounded-xl my-5 mx-10 p-10">
+        <img class="" src="./assets/quota-protest.png" alt="">
+        <div class="px-5 pt-10 ">
+            <span class="flex items-center border w-[20%] py-2 text-black p-1 font-bold"><img src="./assets/coin.png" alt=""> 0 BDT</span>
+            <h4 class="content py-2 text-3xl text-black font-bold">Aid for Injured in the Quota Movement</h4>
+            <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <input type="text" placeholder="Write Donation amount " class="donation input input-bordered w-full bg-white my-2" />
+            <button onclick="my_modal_1.showModal(),addTask(this)" class="btn btn-primary w-full">Donate Now</button>
+        </div>
+    </div>
+
+    <div class="flex border justify-center rounded-xl my-5 mx-10 p-10">
+        <img src="./assets/feni.png" alt="">
+        <div class="px-5 pt-10 ">
+            <span class="flex items-center border w-[20%] py-2 text-black p-1 font-bold"><img src="./assets/coin.png" alt=""> 0 BDT</span>
+            <h4 class="content py-2 text-3xl text-black font-bold">Donate For Flood feni, Bangladesh</h4>
+            <p class="py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <input type="text" placeholder="Write Donation amount " class="donation input input-bordered w-full bg-white my-2" />
+            <button onclick=" my_modal_1.showModal(),addTask(this)" class="btn btn-primary w-full">Donate Now</button>
+        </div>
+    </div>
+</section>
+
+
+
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box text-center bg-white">
+    <h3 class="text-4xl font-bold text-black">Congrats!</h3>
+    <img class="items-center justify-center text-center pt-5 pl-[220px]" src="./assets/coin.png" alt="">
+    <p class="py-4">You have donated for Humankind</p>
+    <h1 class="text-2xl">Successful</h1>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn ">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
+
+
+
+<div id="historySection" class="p-4 bg-white rounded shadow hidden">
+    <h2 class="text-xl p-6  bg-slate-100 font-bold">Donation History</h2>
+    <ul id="task-list" class=" mt-4  "></ul>
+  </div>
+
+
+
+
+    </main>
+    <footer></footer>
+</body>
+<script src="./script.js"></script>
+</html>
